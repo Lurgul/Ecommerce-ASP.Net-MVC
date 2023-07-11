@@ -6,10 +6,14 @@ namespace GameStore.Models
     {
         [Key]
         public int PublisherId { get; set; }
+        [Display(Name = "Pictures of the Publisher")]
         public String Logo { get; set; }
+        [Display(Name = "Name of the Publisher")]
         public String PublisherName { get; set; }
-        public String Description { get; set; }
+        [Display(Name = "Description of the Publisher")]
 
+        public String Description { get; set; }
+        
         public List<Game> Games { get; set; }
     }
 }

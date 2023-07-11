@@ -138,7 +138,6 @@ namespace GameStore.Data
                         },
 
                     });
-
                     context.SaveChanges();
                 }
                 //Platforms&Games
@@ -148,20 +147,9 @@ namespace GameStore.Data
                     {
                         new Platforms_Games()
                         {
-                            GameId = 2,
-                            PlatformId =3 ,
-                        },
-                        new Platforms_Games()
-                        {
                             GameId = 1,
-                            PlatformId = 3,
+                            PlatformId = 1,
                         },
-                        new Platforms_Games()
-                        {
-                            GameId = 3,
-                            PlatformId = 2,
-                        },
-
                     });
                     context.SaveChanges();
                 }
