@@ -28,7 +28,7 @@ namespace GameStore.Data
 
         }
         public DbSet<Platforms> Platforms { get; set; }
-        public DbSet<Game> Game { get; set; }
+        public DbSet<Games> Game { get; set; }
         public DbSet<Platforms_Games> Platforms_Games { get; set; }
         public DbSet<Publisher> Publisher { get; set; }
         public DbSet<Developer> Developer { get; set; }

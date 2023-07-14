@@ -14,6 +14,6 @@ namespace GameStore.Models
 
         public String Description { get; set; }
         
-        public List<Game> Games { get; set; }
+        public List<Games> Game { get; set; }
     }
 }

@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Controllers
 {
-    public class GameController : Controller
+    public class GamesController : Controller
     {
         private readonly AppDbContext _context;
-        public GameController(AppDbContext context)
+        public GamesController(AppDbContext context)
         {
             _context = context;
         }

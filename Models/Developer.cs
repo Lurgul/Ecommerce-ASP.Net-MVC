@@ -13,6 +13,6 @@ namespace GameStore.Models
         [Display(Name = "Description of the Platforms")]
         public String Description { get; set; }
 
-        public List <Game> Games { get; set; }
+        public List <Games> Game { get; set; }
     }
 }

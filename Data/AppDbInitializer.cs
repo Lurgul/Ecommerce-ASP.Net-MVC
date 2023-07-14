@@ -114,9 +114,9 @@ namespace GameStore.Data
                 //Game
                 if (!context.Game.Any())
                 {
-                    context.Game.AddRange(new List<Game>()
+                    context.Game.AddRange(new List<Games>()
                     {
-                        new Game()
+                        new Games()
                         {
                             NameOfTheGame = "FINAL FANTASY XIV",
                             Description = "Take part in an epic and ever-changing FINAL FANTASY as you adventure and explore with friends from around the world. This product also includes the entitlements to play FINAL FANTASY® XIV: A Realm Reborn and the expansion pack FINAL FANTASY® XIV: HEAVENSWARD.",
@@ -126,7 +126,7 @@ namespace GameStore.Data
                             PublisherId = 1,
                             DeveloperId = 2,
                         },
-                        new Game()
+                        new Games()
                         {
                             NameOfTheGame = "The Witcher 3: Wild Hunt",
                             Description = "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world",
