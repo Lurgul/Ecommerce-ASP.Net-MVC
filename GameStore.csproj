@@ -424,8 +424,6 @@
     <None Include="obj\GameStore.csproj.nuget.g.targets" />
     <None Include="obj\project.nuget.cache" />
     <None Include="Views\Developer\Index.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Platforms\Index.cshtml" />
     <None Include="Views\Publisher\Index.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
