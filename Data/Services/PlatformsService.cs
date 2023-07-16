@@ -1,6 +1,7 @@
 ﻿using GameStore.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace GameStore.Data.Services
 {
@@ -36,6 +37,15 @@ namespace GameStore.Data.Services
         {
             throw new NotImplementedException();
         }
+        // Get: Platforms/Create
+        public IPlatformsService Create()
+        {
+            return View();
+        }
 
+        private IPlatformsService View()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

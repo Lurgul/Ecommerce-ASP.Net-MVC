@@ -1,0 +1,40 @@
+﻿@model Platforms
+@{
+    ViewData["Title"] = "Add new platform";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1> Add new Platform</h1>
+        </p>
+        <div class="row ">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </form>
+                <div class="form-group">
+                    <lable asp-for="PlatformPicture" class="control-label"></lable>
+                    <input asp-for="PlatformPicture" class="form-control"/>
+                    <span asp-validation-for="PlatformPicture" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <lable asp-for="PlatformName" class="control-label"></lable>
+                    <input asp-for="PlatformName" class="form-control" />
+                    <span asp-validation-for="PlatformName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <lable asp-for="Description" class="control-label"></lable>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit"value="Create" class="btn btn-outline-success float-right"/>
+                    <a class="btn btn-outline-secondary"asp-action="Index" asp-controller="Show All"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
