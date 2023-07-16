@@ -37,9 +37,5 @@ namespace GameStore.Data.Services
             throw new NotImplementedException();
         }
 
-        Task<IEnumerable<Platforms>> IPlatformsService.GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

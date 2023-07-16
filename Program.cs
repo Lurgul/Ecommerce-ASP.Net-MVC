@@ -1,4 +1,5 @@
 using GameStore.Data;
+using GameStore.Data.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -10,6 +11,8 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 // Added lately.
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString
                 ("DefaultConnectionString")));
+//Services configuration
+builder.Services.AddScoped<IPlatformsService, PlatformsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
