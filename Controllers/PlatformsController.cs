@@ -1,4 +1,5 @@
 ﻿using GameStore.Data;
+using GameStore.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
@@ -6,14 +7,14 @@ namespace GameStore.Controllers
 {
     public class PlatformsController : Controller
     {
-        private readonly AppDbContext _context;
-        public PlatformsController(AppDbContext context)
+        private readonly IPlatformsService _service;
+        public PlatformsController(IPlatformsService service)
         {
-            _context = context;
+            _service = service;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Platforms.ToList();
+            var data = await _service.GetAll();
             return View(data);
         }
     }
