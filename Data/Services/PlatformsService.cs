@@ -37,15 +37,6 @@ namespace GameStore.Data.Services
         {
             throw new NotImplementedException();
         }
-        // Get: Platforms/Create
-        public IPlatformsService Create()
-        {
-            return View();
-        }
-
-        private IPlatformsService View()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
