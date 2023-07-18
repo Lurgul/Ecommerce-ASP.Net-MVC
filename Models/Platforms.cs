@@ -19,6 +19,6 @@ namespace GameStore.Models
         public String Description { get; set; }
         
 
-        public List<Platforms_Games> Platforms_Games { get; set; }
+        public List<Platforms_Games>? Platforms_Games { get; set; }
     }
 }
