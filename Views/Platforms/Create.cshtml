@@ -14,31 +14,30 @@
             <div class="col-md-8 offset-2">
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group text-center">
+                        <img id="PlatformPicturePreview" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PlatformPicture" class="control-label"></label>
+                        <input asp-for="PlatformPicture" class="form-control" />
+                        <span asp-validation-for="PlatformPicture" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PlatformName" class="control-label"></label>
+                        <input asp-for="PlatformName" class="form-control" />
+                        <span asp-validation-for="PlatformName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                    </div>
                 </form>
-                <div class="form-group text-center">
-                    <img id="PlatformPicturePreview" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="PlatformPicture" class="control-label"></label>
-                    <input asp-for="PlatformPicture" class="form-control" />
-                    <span asp-validation-for="PlatformPicture" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="PlatformName" class="control-label"></label>
-                    <input asp-for="PlatformName" class="form-control" />
-                    <span asp-validation-for="PlatformName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    <input asp-for="Description" class="form-control" />
-                    <span asp-validation-for="Description" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-outline-success float-right" />
-                    <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
-                </div>
-
             </div>
         </div>
     </div>
@@ -46,7 +45,12 @@
 
 @section Scripts{ 
     <script>
-        $("#ProfilePictureURL").on("change", function () {
+        $(document).ready(function()
+        {
+            var output = document.getElementById('PlatformPicturePreview');
+            output.src = $("#PlatformPictures").val();
+        })
+        $("#PlatformPicture").on("change", function () {
             var output = document.getElementById('PlatformPicturePreview');
             output.src = $(this).val();
         })

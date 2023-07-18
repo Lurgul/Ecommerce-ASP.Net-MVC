@@ -8,14 +8,14 @@ namespace GameStore.Models
         public int PlatformId { get; set; }
 
         [Display(Name = "Pictures of the Platform")]
+        [Required(ErrorMessage ="Platforms's picture is required!")]
         public String PlatformPicture { get; set; }
 
-
-        [Display(Name = "Name of the Platform")]
         public String PlatformName { get; set; }
+        [Display(Name = "Name of the Platform")]
+        [Required(ErrorMessage = "Platforms's name is required!")]
 
 
-        [Display(Name = "Description of the Publisher")]
         public String Description { get; set; }
         
 

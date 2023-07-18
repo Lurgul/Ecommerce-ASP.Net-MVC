@@ -8,13 +8,15 @@ namespace GameStore.Data.Services
     public class PlatformsService : IPlatformsService
     {
         private readonly AppDbContext _context;
+
         public PlatformsService(AppDbContext context)
         {
             _context = context;
         }
-        public void Add(Platforms Platforms)
+        public void Add(Platforms platform)
         {
-            throw new NotImplementedException();
+            _context.Platforms.Add(platform);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
@@ -24,7 +26,7 @@ namespace GameStore.Data.Services
 
         public async Task<IEnumerable<Platforms>> GetAll()
         {
-            var result =await _context.Platforms.ToListAsync();
+            var result = await _context.Platforms.ToListAsync();
             return result;
         }
 
@@ -33,10 +35,9 @@ namespace GameStore.Data.Services
             throw new NotImplementedException();
         }
 
-        public Platforms Update(int id, Platforms newPlatforms)
+        public Platforms Update(int id, Platforms newplatform)
         {
             throw new NotImplementedException();
         }
-      
     }
 }
