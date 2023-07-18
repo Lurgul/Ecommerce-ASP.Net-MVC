@@ -61,5 +61,22 @@ namespace GameStore.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+        // Get: Platforms/Delete
+        public async Task<IActionResult> Delete(int id)
+        {
+            var platformDetails = await _service.GetByIdAsync(id);
+            if (platformDetails == null) return View("Not Found!");
+            return View(platformDetails);
+        }
+
+        [HttpPost,ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var platformDetails = await _service.GetByIdAsync(id);
+            if (platformDetails == null) return View("Not Found!");
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }

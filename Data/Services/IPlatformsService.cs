@@ -8,6 +8,6 @@ namespace GameStore.Data.Services
         Task<Platforms> GetByIdAsync(int id);
         Task AddAsync(Platforms platform);
         Task<Platforms> UpdateAsync(int id, Platforms newplatform);
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }
