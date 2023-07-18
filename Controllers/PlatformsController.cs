@@ -2,6 +2,7 @@
 using GameStore.Data.Services;
 using GameStore.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.Language.Extensions;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace GameStore.Controllers
@@ -15,7 +16,7 @@ namespace GameStore.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAll();
+            var data = await _service.GetAllAsync();
             return View(data);
         }
         // Get: Platforms/Create
@@ -30,8 +31,35 @@ namespace GameStore.Controllers
             {
                 return View(platform);
             }
-            _service.Add(platform);
+            await _service.AddAsync(platform);
             return RedirectToAction(nameof(Index));
+        }
+
+        // Get: Platforms / Details
+        public async Task<IActionResult> Details(int id)
+        {
+            var platformDetails = await _service.GetByIdAsync(id);
+            if (platformDetails == null) return View("Not Found!");
+            return View(platformDetails);
+        }
+
+        // Get: Platforms/Edit
+        public async Task<IActionResult> Edit(int id)
+        {
+            var platformDetails = await _service.GetByIdAsync(id);
+            if (platformDetails == null) return View("Not Found!");
+            return View(platformDetails);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id,[Bind("PlatformsId,PlatformPicture,PlatformName,Description")] Platforms platform)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(platform);
+            }
+            await _service.UpdateAsync(id,platform);
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

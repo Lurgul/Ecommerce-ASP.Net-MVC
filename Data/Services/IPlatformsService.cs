@@ -4,10 +4,10 @@ namespace GameStore.Data.Services
 {
     public interface IPlatformsService
     {
-        Task<IEnumerable<Platforms>> GetAll();
-        Platforms GetById(int id);
-        void Add(Platforms platform);
-        Platforms Update(int id, Platforms newplatform);
+        Task<IEnumerable<Platforms>> GetAllAsync();
+        Task<Platforms> GetByIdAsync(int id);
+        Task AddAsync(Platforms platform);
+        Task<Platforms> UpdateAsync(int id, Platforms newplatform);
         void Delete(int id);
     }
 }

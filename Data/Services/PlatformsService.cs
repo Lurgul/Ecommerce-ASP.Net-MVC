@@ -13,10 +13,10 @@ namespace GameStore.Data.Services
         {
             _context = context;
         }
-        public void Add(Platforms platform)
+        public async Task AddAsync(Platforms platform)
         {
-            _context.Platforms.Add(platform);
-            _context.SaveChanges();
+            await _context.Platforms.AddAsync(platform);
+            await _context.SaveChangesAsync();
         }
 
         public void Delete(int id)
@@ -24,20 +24,23 @@ namespace GameStore.Data.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Platforms>> GetAll()
+        public async Task<IEnumerable<Platforms>> GetAllAsync()
         {
             var result = await _context.Platforms.ToListAsync();
             return result;
         }
 
-        public Platforms GetById(int id)
+        public async Task<Platforms> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Platforms.FirstOrDefaultAsync(n => n.PlatformId == id);
+            return result;
         }
 
-        public Platforms Update(int id, Platforms newplatform)
+        public async Task<Platforms> UpdateAsync(int id, Platforms newplatform)
         {
-            throw new NotImplementedException();
+            _context.Update(newplatform);
+            await _context.SaveChangesAsync();
+            return newplatform;
         }
     }
 }
