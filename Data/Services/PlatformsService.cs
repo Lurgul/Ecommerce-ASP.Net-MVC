@@ -27,16 +27,14 @@ namespace GameStore.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Platforms>> GetAllAsync()
+        public Task<IEnumerable<Platforms>> GetAllAsync()
         {
-            var result = await _context.Platforms.ToListAsync();
-            return result;
+            throw new NotImplementedException();
         }
 
-        public async Task<Platforms> GetByIdAsync(int id)
+        public Task<Platforms> GetByIdAsync(int id)
         {
-            var result = await _context.Platforms.FirstOrDefaultAsync(n => n.PlatformId == id);
-            return result;
+            throw new NotImplementedException();
         }
 
         public async Task<Platforms> UpdateAsync(int id, Platforms newplatform)
